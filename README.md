@@ -1,16 +1,30 @@
-# github_search_user
 
-A new Flutter project.
+# App para pesquisar usuários no Github
 
-## Getting Started
+Um aplicativo desenvolvido em Flutter que consulta a API pública de pesquisa do GitHub. Este app faz
+um filtro por nome de usuário, retornando os usuários encontrados na pesquisa. Ao clicar em um usuário,
+o app abre uma nova tela com mais informações sobre o usuário selecionado.
 
-This project is a starting point for a Flutter application.
+### Organização
+O app está organizado por features. Como este só possui uma tela de busca e uma de perfil, foi criada apenas um feature que é `user_search`.
 
-A few resources to get you started if this is your first Flutter project:
+### Gerência de estado
+O app utiliza o BLoC pattern como state management, no qual está definido com os módulo de `event`, `state` e `bloc`.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Packages utilizados
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- http
+- freezed_annotation
+- freezed
+- flutter_bloc
+- flutter_inappwebview
+- build_runner (dev dependency)
+
+### Instalação
+    1. Abra uma terminal;
+    2. Digite `git@github.com:John-Rocha/github-search-user.git` e pressione ENTER;
+    3. Digite `cd github_search_user`;
+    4. Digite `flutter pub get`;
+    5. Abra o diretório na IDE da sua escolha.
+
+### Usabilidade
