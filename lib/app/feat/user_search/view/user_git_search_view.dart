@@ -53,6 +53,12 @@ class _UserGitSearchViewState extends State<UserGitSearchView> {
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
+                  validator: (value) {
+                    if (value?.isEmpty == true) {
+                      return 'Digite um user';
+                    }
+                    return null;
+                  },
                 ),
                 const SizedBox(height: 15),
                 ElevatedButton(

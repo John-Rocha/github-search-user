@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:github_search_user/app/feat/user_search/model/user_items.dart';
 
+// ignore: must_be_immutable
 class UserGitProfileView extends StatelessWidget {
   final UserItems user;
 
