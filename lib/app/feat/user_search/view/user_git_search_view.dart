@@ -72,7 +72,6 @@ class _UserGitSearchViewState extends State<UserGitSearchView> {
                             userId: _userController.text,
                           ),
                         );
-                    _userController.clear();
                   },
                   child: const Text('Buscar'),
                 ),
