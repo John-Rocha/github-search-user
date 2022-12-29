@@ -33,8 +33,7 @@ class _UserGitSearchViewState extends State<UserGitSearchView> {
         ),
         child: Form(
           key: _formKey,
-          child: SingleChildScrollView(
-            child: Column(
+          child: Column(
               children: [
                 Center(
                   child: Text(
@@ -76,7 +75,10 @@ class _UserGitSearchViewState extends State<UserGitSearchView> {
                   child: const Text('Buscar'),
                 ),
                 const SizedBox(height: 15),
-                BlocBuilder<UserSearchBloc, UserSearchState>(
+                //Expanded aqui faz com que o que tem dentro dele "Ocupe todo o espaço vertical
+                //disponível na column"
+                Expanded(
+                  child: BlocBuilder<UserSearchBloc, UserSearchState>(
                   builder: (context, state) {
                     return state.when(
                       initial: () => const SizedBox.shrink(),
@@ -84,9 +86,8 @@ class _UserGitSearchViewState extends State<UserGitSearchView> {
                         child: CircularProgressIndicator(),
                       ),
                       data: (user) {
-                        final users = user.items ?? [];
+                        final users = user.items ?? [];                        
                         return ListView.builder(
-                          physics: const NeverScrollableScrollPhysics(),
                           shrinkWrap: true,
                           itemCount: users.length,
                           controller: ScrollController(keepScrollOffset: true),
@@ -102,9 +103,9 @@ class _UserGitSearchViewState extends State<UserGitSearchView> {
                     );
                   },
                 ),
+                ),
               ],
             ),
-          ),
         ),
       ),
     );
